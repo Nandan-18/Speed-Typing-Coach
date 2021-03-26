@@ -1,3 +1,5 @@
+
+[Sample Outputs.pdf](https://github.com/Nandan-18/Speed-Typing-Coach/files/6213850/Sample.Outputs.pdf)
 # Speed Typing Coach
 
 In today’s technologically advancing world, it has become essential for everyone to learn how to use computers and its functions, for even day-to-day tasks like-
