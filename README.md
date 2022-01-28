@@ -1,5 +1,5 @@
 
-# Speed Typing Coach
+# Speed Typing Coach 🎮
 
 In today’s technologically advancing world, it has become essential for everyone to learn how to use computers and its functions, for even day-to-day tasks like-
 
