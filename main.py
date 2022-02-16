@@ -1,8 +1,9 @@
 # importing required modules
 
-from tkinter import *
 import random
+from tkinter import *
 from tkinter import messagebox
+
 import mysql.connector as ms
 
 # GLOBAL VARIABLES  #
@@ -28,7 +29,8 @@ sports_words = []
 def topic():
     topic_window = Tk()
     topic_window.title("CHOOSE A TOPIC")
-    topic_window.geometry("{0}x{1}+0+0".format(topic_window.winfo_screenwidth(), topic_window.winfo_screenheight()))
+    topic_window.geometry(
+        "{0}x{1}+0+0".format(topic_window.winfo_screenwidth(), topic_window.winfo_screenheight()))
 
     Grid.rowconfigure(topic_window, 0, weight=1)
     Grid.rowconfigure(topic_window, 1, weight=1)
@@ -45,7 +47,8 @@ def topic():
         reader = fh.read()
         tech_words = reader.split('|')
         typing_page(tech_words)
-        type_window.bind('<Return>', lambda event: start_game(event, tech_words))
+        type_window.bind(
+            '<Return>', lambda event: start_game(event, tech_words))
 
     tech = Button(topic_window,
                   text="TECH",
@@ -65,7 +68,8 @@ def topic():
         reader = fh.read()
         science_words = reader.split('|')
         typing_page(science_words)
-        type_window.bind('<Return>', lambda event: start_game(event, science_words))
+        type_window.bind(
+            '<Return>', lambda event: start_game(event, science_words))
 
     science_button = Button(topic_window,
                             text="SCIENCE",
@@ -86,7 +90,8 @@ def topic():
         reader = fh.read()
         literature_words = reader.split('|')
         typing_page(literature_words)
-        type_window.bind('<Return>', lambda event: start_game(event, literature_words))
+        type_window.bind('<Return>', lambda event: start_game(
+            event, literature_words))
 
     lit = Button(topic_window,
                  text="LITERATURE",
@@ -106,7 +111,8 @@ def topic():
         reader = fh.read()
         sports_words = reader.split('|')
         typing_page(sports_words)
-        type_window.bind('<Return>', lambda event: start_game(event, sports_words))
+        type_window.bind(
+            '<Return>', lambda event: start_game(event, sports_words))
 
     sport = Button(topic_window,
                    text="SPORTS",
@@ -122,11 +128,13 @@ def topic():
 #  TYPING PAGE ALL WIDGETS FUNCTION  #
 
 
-def typing_page(input_words):           # input_words refers to type of word-set called (science,tech,lit,sports)
+# input_words refers to type of word-set called (science,tech,lit,sports)
+def typing_page(input_words):
     global type_window
     type_window = Tk()
     type_window.title("THIS IS A SPEED TEST !")
-    type_window.geometry("{0}x{1}+0+0".format(type_window.winfo_screenwidth(), type_window.winfo_screenheight()))
+    type_window.geometry(
+        "{0}x{1}+0+0".format(type_window.winfo_screenwidth(), type_window.winfo_screenheight()))
     type_window.configure(bg='SkyBlue4')
     random.shuffle(input_words)
 
@@ -241,7 +249,8 @@ def time(words=None):
                                                                                 miss,
                                                                                 score - miss))
 
-        rr = messagebox.askretrycancel('Notification', 'To Play Again Hit Retry')
+        rr = messagebox.askretrycancel(
+            'Notification', 'To Play Again Hit Retry')
         if rr:
             score = 0
             timeleft = 60
@@ -302,7 +311,8 @@ window.title("SPEED TYPING APP")
 opening_label = Label(window)
 opening_label.img = PhotoImage(file="photo.gif", master=window)
 opening_label.config(image=opening_label.img)
-window.geometry("{0}x{1}+0+0".format(window.winfo_screenwidth(), window.winfo_screenheight()))
+window.geometry(
+    "{0}x{1}+0+0".format(window.winfo_screenwidth(), window.winfo_screenheight()))
 
 
 #  FONT LABEL FOR SLIDING TEXT  #
